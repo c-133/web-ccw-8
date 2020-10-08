@@ -25,7 +25,7 @@
         />
         <select id="country-list">
           <option value="USA">🇺🇸</option>
-          <option value="England">🏴󠁧󠁢󠁥󠁮󠁧󠁿</option>
+          <option value="England">UK</option>
           <option value="UAE">🇦🇪</option>
           <option value="Turkey">🇹🇷</option>
         </select>
@@ -49,7 +49,7 @@
 
     <script>
       // عرف الدالة
-      {
+      function changeCurr() {
         let amount = document.getElementById("amount").value;
         let sel = document.getElementById("country-list");
         let country = sel.value;
@@ -64,17 +64,22 @@
           UAE        amount * 12.01
           Turkey     amount * 24.68
         */
-        if (condition) {
-          // دينار كويتي إلى دولار أمريكي
+        if (country == "USA") {
           newAmount = amount * 3.27;
           document.getElementById("newAmount").innerHTML =
             newAmount + " دولار أمريكي";
-        } else if (condition) {
-          // دينار كويتي إلى باوند بريطاني
-        } else if (condition) {
-          // دينار كويتي إلى درهم إماراتي
-        } else {
-          // دينار كويتي إلى ليرة تركية
+        } else if (country == "England") {
+          newAmount = amount * 2.52;
+          document.getElementById("newAmount").innerHTML =
+            newAmount + " باوند بريطاني";
+        } else if (country == "UAE") {
+          newAmount = amount * 12.01;
+          document.getElementById("newAmount").innerHTML =
+            newAmount + " درهم إماراتي";
+        } else if (country == "Turkey") {
+          newAmount = amount * 24.68;
+          document.getElementById("newAmount").innerHTML =
+            newAmount + " ليرة تركية";
         }
       }
     </script>

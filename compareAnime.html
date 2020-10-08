@@ -18,15 +18,32 @@
         اللي إنت اتابعها Animeتحتوي على مسلسلات ال myAnime المصفوفة الأولى
         اللي رفيجك يتابعها Animeتحتوي على مسلسلات ال myFriendAnime المصفوفة الثانية
       */
-
+      let myAnime = [
+        "Naruto",
+        "One Piece",
+        "Dragon Ball",
+        "Hunter × Hunter",
+        "Bleach",
+      ];
+      let myFriendAnime = [
+        "Attack on Titan",
+        "Naruto",
+        "One Punch Man",
+        "Doraemon",
+        "One Piece",
+      ];
       // 2
       // mutualAnime عرف مصفوفة فاضية سمها
-
+      let mutualAnime = [];
       // mutualAnimeقارن المصفوفتين وضيف المسلسلات المشتركة ل
-
+      myAnime.forEach((Anime) => {
+        if (myFriendAnime.indexOf(Anime) != -1) {
+          mutualAnime.push(Anime);
+        }
+      });
       // consoleفي ال mutualAnime اطبع
       // ما طبع؟ أكيد في شي ناقص، عرفته؟
-
+      console.log(mutualAnime);
       // ودك تشوف اللستة المشتركة بينكم على الموقع؟
       // 🏃🏻‍♂️ ادخل على صفحة الموقع في المتصفح
       // 👀 لا ننصح أصحاب القلوب الضعيفة بالنظر إلى الأسفل
@@ -34,7 +51,7 @@
       ul.className = "myList";
       document.getElementById("container").appendChild(ul);
 
-      function createList(arr) {
+      function createList() {
         mutualAnime.forEach(function (data) {
           let li = document.createElement("li");
           ul.appendChild(li);
@@ -42,6 +59,7 @@
           li.className = "listItem";
         });
       }
+      createList();
     </script>
   </body>
 </html>
